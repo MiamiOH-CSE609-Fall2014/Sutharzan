@@ -59,7 +59,7 @@ int main(){ // Main method
     cout << endl;
   }
   cout << endl;
-  /*
+  
   // Printing the resulting matrix (Matrix C)
   for(int k=0; k<nr; ++k){  
     for(int i=0; i<nc2; ++i){
@@ -70,7 +70,7 @@ int main(){ // Main method
       mati = 0;
     }
     cout << endl;
-    } */
+    } 
  
   return 0;
 }
