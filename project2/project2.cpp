@@ -79,7 +79,11 @@ void gradeThres() { // Calculates and displays the letter grade ranges
     printRangeThres(thresVec[2],thresVec[3]);
     //F
     cout << "F below ";
-    printSingleThres(thresVec[3]);
+    if (thresVec[3] >= 0) {
+        printf("%.1f", thresVec[3]);
+    } else {
+        printf("%.1f", 0.0);
+    }
     cout << "%" << endl << endl;
 }
 
@@ -88,7 +92,7 @@ string curve(float pGrade) { // Mapps the letter grades for the scores
     if(pGrade > thresVec[0]){ // A
         sGrade = "A";
     }
-    else if (pGrade <= thresVec[0] && pGrade > thresVec[1]){ //B
+    else if ((pGrade <= thresVec[0] && pGrade > thresVec[1]) || (thresVec[0] == thresVec[1]) ){ //B
         sGrade = "B";
     }
     else if (pGrade <= thresVec[1] && pGrade > thresVec[2]){ // C
@@ -153,8 +157,13 @@ int main(int argc, char** argv) { // main method
         cout << endl;
         for (int i = 0; i < nameVec.size(); ++i) { // Printing the grade of each student
             printf("%-30s", nameVec[i].c_str());
-            printf("%-.1f %s", scoreVec[i],"%");
-            printf("%26s",curve(scoreVec[i]).c_str());
+            printf("%-.1f%%", scoreVec[i]);
+            if(scoreVec[i]>99.95)
+            printf("%25s",curve(scoreVec[i]).c_str());
+            else if (scoreVec[i]>9.95)
+                printf("%26s",curve(scoreVec[i]).c_str());
+            else
+                printf("%27s",curve(scoreVec[i]).c_str());
             cout << endl;
         }
         cout << endl;
