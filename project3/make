@@ -1,0 +1,1 @@
+ g++ -std=c++11 parseFastaFile.cpp digramFreqScores.cpp digramFreqMatrix.cpp parseScoringFile.cpp scoreSequence.cpp findHighScore.cpp project3.cpp
