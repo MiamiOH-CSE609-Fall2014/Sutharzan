@@ -58,13 +58,13 @@ int main(int argc, char** argv) {
     vector<vector<int>> scoreVecData = parseScoringFile(scoreFilePath);
 
     // Getting the list of string from the user
-    cout << "How many sequences would you like to score?";
+    cout << "How many sequences would you like to score? ";
     string tmpStr;
     getline(cin, tmpStr);
     vector<string> seqs;
     int num_seq = atoi(tmpStr.c_str());
     for (int i = 0; i < num_seq; ++i) {
-        cout << "Enter string No." << i << ": ";
+        cout << "Enter string No." << i+1 << ": ";
         getline(cin,tmpStr);
         seqs.push_back(tmpStr);
     }
