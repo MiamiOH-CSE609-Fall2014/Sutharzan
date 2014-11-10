@@ -6,8 +6,9 @@
 #include <iterator>
 #include "digramFreqScores.h"
 
+// This function creates a map of digram frequencies
 map<string, int> digramFreqScores(string s) {
-    map<string, int> diData = {
+    map<string, int> scores = { // Map to store the digram frequencies
         {"AA", 0},
         {"AG", 0},
         {"AC", 0},
@@ -25,9 +26,9 @@ map<string, int> digramFreqScores(string s) {
         {"TC", 0},
         {"TT", 0}
     };
-    for (int i = 0; i < (s.length()-1); ++i) {
-        ++diData[s.substr(i,2)];
+    for (int i = 0; i < (s.length()-1); ++i) { // Calculating the digram frequencies
+        ++scores[s.substr(i,2)];
     }
-    return diData;
+    return scores;
 }
 
