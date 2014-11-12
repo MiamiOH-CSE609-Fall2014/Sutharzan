@@ -13,7 +13,7 @@ pair<int, int> scoreSequence(string haystack, string needle, vector<vector<int>>
         {'A', 0},
         {'G', 1},
         {'C', 2},
-        {'D', 3}
+        {'T', 3}
     };
     int score = 0; // Variable to store the score of an alignment
     string word; // String to store a word from haystack
